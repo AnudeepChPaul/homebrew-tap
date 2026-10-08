@@ -1,0 +1,23 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  digest:
+    runs-on: macos-latest
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_INSTALL_CLEANUP: "1"
+    steps:
+      - uses: actions/checkout@v7
+      - run: brew tap anudeepchpaul/tap "$GITHUB_WORKSPACE"
+      - run: brew install --build-from-source anudeepchpaul/tap/digest
+      - run: brew test anudeepchpaul/tap/digest
+      - run: brew audit --strict --online anudeepchpaul/tap/digest
