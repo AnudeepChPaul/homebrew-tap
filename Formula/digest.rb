@@ -11,7 +11,7 @@ class Digest < Formula
   depends_on "terminal-notifier"
 
   def install
-    ldflags = "-s -w -X github.com/AnudeepChPaul/digest/pkg/tui.appVersion=#{version}"
+    ldflags = "-X github.com/AnudeepChPaul/digest/pkg/tui.appVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/digest"
   end
 
