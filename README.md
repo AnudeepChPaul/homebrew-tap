@@ -1,9 +1,9 @@
 # homebrew-tap
 
-Private Homebrew tap for digest. Needs SSH access to both repos.
+Homebrew tap for [digest](https://github.com/AnudeepChPaul/digest).
 
 ```sh
-brew tap anudeepchpaul/tap git@github.com:AnudeepChPaul/homebrew-tap.git
+brew tap anudeepchpaul/tap
 brew install digest
 ```
 
