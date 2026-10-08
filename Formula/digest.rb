@@ -1,5 +1,5 @@
 class Digest < Formula
-  desc "Digest your day to day work without acidity"
+  desc "Terminal dashboard for your day-to-day work"
   homepage "https://github.com/AnudeepChPaul/digest"
   url "git@github.com:AnudeepChPaul/digest.git",
       using:    :git,
